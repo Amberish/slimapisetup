@@ -13,7 +13,14 @@ class DB implements DBInterface{
     $username = "root";
     $password = "inveera";
     $database_name = "multilingual";
-    $this->db = $this->connect($host, $username, $password, $database_name);
+    // $username = "mindmlts_mmuser";
+    // $password = "w5eeJ%C}aUi$";
+    // $database_name = "mindmlts_mindmap";
+  	try{
+  		$this->db = $this->connect($host, $username, $password, $database_name);
+  	} catch (Exception $e){
+  		echo $e->getMessage();
+  	}
   }
 
   public function connect($host, $username, $password, $database_name){
